@@ -18,5 +18,8 @@
     <ClCompile Include="..\maintask\29-3.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\maintask\30-1.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
