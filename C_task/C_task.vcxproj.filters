@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\maintask\2-5.c">
+    <ClCompile Include="..\maintask\3-2.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
