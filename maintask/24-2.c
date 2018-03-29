@@ -13,29 +13,23 @@ int main()
 
 void twin_prime(int begin, int end)
 {
-	int i; 
-	int first=0,second=2;
-	for ( i = begin; i <= end; i++)
+	int i;
+	for (i = begin; i <= end-2; i++)
 	{
-		if (isprime(i))
+		if (isprime(i)&&isprime(i+2))
 		{
-			first = second;
-			second = i;
-			if (second-first==2)
-			{
-				printf("twin prime:%d and %d\n", first, second);
-			}
+			printf("twin prime:%d and %d\n", i, i+2);
 		}
-		
+
 	}
 }
 
 int isprime(int p)
 {
 	int i;
-	for ( i = 2; i <= p/2; i++)
+	for (i = 2; i <= p / 2; i++)
 	{
-		if (p%i==0)
+		if (p%i == 0)
 		{
 			return 0;
 		}
