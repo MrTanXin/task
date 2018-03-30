@@ -13,7 +13,6 @@ int check2(int adj1, int mid, int adj2)
 
 void check1(int m[][N])//
 {
-	int check(int, int, int);
 	int i, j;
 	int maxh, maxl, minh, minl;
 	for ( i = 1; i < 6; i++)
