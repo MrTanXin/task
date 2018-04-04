@@ -7,6 +7,7 @@ int main()
 	void draw2(char c);
 	void draw3(char c);
 	void draw4(char c);
+	void draw5(char c);
 	draw1(c);
 	printf("\n\n");
 	draw2(c);

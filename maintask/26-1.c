@@ -1,7 +1,9 @@
 #include <stdio.h>
 
 void sumFact(int n);
+
 int sum = 0;
+
 int main()
 {
 	int n;
@@ -17,7 +19,8 @@ void sumFact(int n)
 	int i = n;
 	if (n==0)
 	{
-		printf("sum = %d", sum);
+		printf("sum = %d\n", sum);
+		return 0;
 	}
 
 	for (; i > 0; i--)
@@ -27,5 +30,4 @@ void sumFact(int n)
 
 	sum += tempSum;
 	return sumFact(n - 1);
-
 }

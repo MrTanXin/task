@@ -15,30 +15,30 @@ void check1(int m[][N])//
 {
 	int i, j;
 	int maxh, maxl, minh, minl;
-	for ( i = 1; i < 6; i++)
+	for ( i = 1; i <= 6; i++)
 	{
-		for ( j = 1; j < 6; j++)
+		for ( j = 1; j <= 6; j++)
 		{
 			minl = minh = maxh = maxl = m[i][j];
-			if (minl > m[i - 1][j])
-				minl = m[i - 1][j];
-			if (minl > m[i + 1][j])
-				minl = m[i + 1][j];
-
-			if (minh < m[i - 1][j])
+			if (minh > m[i - 1][j])//minh
 				minh = m[i - 1][j];
-			if (minh < m[i + 1][j])
+			if (minh > m[i + 1][j])
 				minh = m[i + 1][j];
 
-			if (maxh < m[i][j + 1])
-				maxh = m[i][j + 1];
-			if (maxh < m[i][j - 1])
-				maxh = m[i][j - 1];
+			if (maxh < m[i - 1][j])//maxh
+				maxh = m[i - 1][j];
+			if (maxh < m[i + 1][j])
+				maxh = m[i + 1][j];
 
-			if (maxl > m[i][j - 1])
-				maxl = m[i][j - 1];
-			if (maxl > m[i][j + 1])
+			if (maxl < m[i][j + 1])//maxl
 				maxl = m[i][j + 1];
+			if (maxl < m[i][j - 1])
+				maxl = m[i][j - 1];
+
+			if (minl > m[i][j - 1])//minl
+				minl = m[i][j - 1];
+			if (minl > m[i][j + 1])
+				minl = m[i][j + 1];
 			
 			if (check2(maxl,m[i][j],minh)||check2(maxh,m[i][j],minl))
 			{
