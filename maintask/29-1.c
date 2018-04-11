@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 
 int main()
@@ -6,6 +7,7 @@ int main()
 	float *p = NULL;
 	int i, j;
 	float score[6][5];
+
 	for ( i = 0; i < 6; i++)
 	{
 		for ( j = 0; j < 4; j++)
@@ -13,12 +15,14 @@ int main()
 			score[i][j] = rand() % 41 + 60;
 		}
 	}
+
 	for ( i = 0; i < 6; i++)
 	{
 		score[i][4] = score[i][0] + score[i][1] + score[i][2] + score[i][3];
 	}
 
 	h = findmax(score, p);
+
 	for ( i = 0; i < 6; i++)
 	{
 		for ( j = 0; j < 5; j++)
@@ -27,6 +31,7 @@ int main()
 		}
 		printf("\n");
 	}
+
 	printf("\n");
 	printf("第%d行最大", h);
 

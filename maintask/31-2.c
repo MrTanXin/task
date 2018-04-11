@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 void print(int a[][4], int flag);
 void find_no_pass(int score[][4]);
+void sort(int a[][4]);
 
 int main()
 {
@@ -19,12 +21,13 @@ int main()
 	}
 
 	find_no_pass(score);
-
+	sort(score);
 	return 0;
 }
 
 void find_no_pass(int score[][4])
 {
+	printf("NO_PASS\n");
 	int i, j;
 	int mark=0;
 	for ( i = 0; i < 5; i++)
@@ -52,8 +55,10 @@ void print(int a[][4],int flag)
 
 void sort(int a[][4])
 {
+	int temp[4];
 	int i, j;
-	int temp, *change;
+	int  *change;
+	int exchange;
 	int t[5] = {0,0,0,0,0};
 	for ( i = 0; i < 5; i++)
 	{
@@ -63,19 +68,29 @@ void sort(int a[][4])
 		}
 	}
 
-	for (j = 0; j < 5 - 1; j++)
-		for (i = 0; i < 5 - 1 - j; i++)
+	for (i = 0; i < 5 - 1; i++)
+		for (j = 0; j < 5 - 1 - i; j++)
 		{
-			if (t[i] > t[i + 1])
+			if (t[j] < t[j + 1])
 			{
-				temp = t[i];
-				t[i] = t[i + 1];
-				t[i + 1] = temp;
+				memcpy(temp,a[j],sizeof(temp));
+				memcpy(a[j], a[j + 1], sizeof(temp));
+				memcpy(a[j + 1], temp, sizeof(temp));
 
-
-
-
-
+				exchange = t[j];
+				t[j] = t[j + 1];
+				t[j + 1] = exchange;
 			}
 		}
+
+	for ( i = 0; i < 5; i++)
+	{
+		for ( j = 0; j < 4; j++)
+		{
+			printf("%d ", a[i][j]);
+			
+		}
+		printf("%d", t[i]);
+		printf("\n");
+	}
 }

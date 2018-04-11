@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 #define N 3
-void exchange_arr(int string[][N]);
+void exchange_arr(int(*string)[N]);
 void print(int a[][N]);
 void exchange(int string[][N]);
 
@@ -18,7 +18,7 @@ int main()
 	return 0;
 }
 
-void exchange_arr(int string[][N])
+void exchange_arr(int (*string)[N])
 {
 	int i, j;
 	int temp;
