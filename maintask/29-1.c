@@ -1,5 +1,5 @@
-
 #include <stdio.h>
+#include <stdlib.h>
 
 int main()
 {
@@ -8,6 +8,7 @@ int main()
 	float *p = &p_max;
 	int i, j;
 	float score[6][5];
+	srand((unsigned)time(NULL));
 
 	for ( i = 0; i < 6; i++)
 	{
@@ -42,7 +43,7 @@ int findmax(float s[][5], float *p)
 {
 	int i;
 	*p = s[0][4];
-	int h = 0;
+	int h = 1;
 	for ( i = 0; i < 6; i++)
 	{
 		if (*p < s[i][4])
