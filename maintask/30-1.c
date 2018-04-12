@@ -10,8 +10,9 @@ int main()
 	for ( i = 0; i < 10; i++)
 	{
 		a[i] = rand() % 101;
+		printf("%d ", a[i]);
 	}
-
+	printf("\n");
 	max_min_value(a);
 	
 	return 0;
@@ -19,31 +20,34 @@ int main()
 
 void max_min_value(int *a)
 {
-	int max=a[0], min=a[0];
+	int *max, *min, t, i;
 	int maxW = 0, minW = 0;
-	int i;
-	int temp;
-	for ( i = 0; i < 10; i++)
-	{
-		if (max<a[i])
+
+	max = a;
+	min = a;
+	for (i = 0; i < 10; i++)
+		if (*max < a[i])
 		{
-			max = a[i];
+			max = &a[i];
 			maxW = i;
 		}
-		if (min>a[i])
+			
+
+	for (i = 0; i < 10; i++)
+		if (*min > a[i])
 		{
-			min = a[i];
+			min = &a[i];
 			minW = i;
 		}
-	}
- 
-	temp = max;
-	max = a[9];
-	a[9] = temp;
+			
 
-	temp = min;
-	min = a[0];
-	a[0] = temp;
+	t = a[minW];
+	a[minW] = a[0];
+	a[0] = t;
+
+	t = a[maxW];
+	a[maxW] = a[9];
+	a[9] = t;
 
 	for ( i = 0; i < 10; i++)
 	{

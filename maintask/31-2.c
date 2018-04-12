@@ -22,6 +22,7 @@ int main()
 
 	find_no_pass(score);
 	sort(score);
+
 	return 0;
 }
 
@@ -50,7 +51,8 @@ void find_no_pass(int score[][4])
 
 void print(int a[][4],int flag)
 {
-	printf("ID:%d ³É¼¨£º%d,%d,%d,%d\n", flag, a[flag][0], a[flag][1], a[flag][2], a[flag][3]);
+	printf("ID:%d ³É¼¨£º%d,%d,%d,%d,aver = %.0f\n", 
+		flag, a[flag][0], a[flag][1], a[flag][2], a[flag][3], (a[flag][0]+ a[flag][1]+ a[flag][2]+ a[flag][3])/4.0);
 }
 
 void sort(int a[][4])
@@ -88,7 +90,6 @@ void sort(int a[][4])
 		for ( j = 0; j < 4; j++)
 		{
 			printf("%d ", a[i][j]);
-			
 		}
 		printf("%d", t[i]);
 		printf("\n");
