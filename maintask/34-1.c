@@ -17,6 +17,7 @@ int main()
 		printf("month is incorrect");
 		return 0;
 	}
+	
 	printf("%s", Userin);
 	printf(" month is %d", result);
 	
