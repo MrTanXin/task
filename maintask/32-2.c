@@ -3,34 +3,40 @@
 #include <string.h>
 #include <ctype.h>
 
-void change(char *source, char *Newstr);
+int change(char *source, int *Newstr);
 
 int main()
 {
-	int i;
-	char *source = "A1B2C3D4E5F6";
-	char *Newstr = malloc(100 * sizeof(char));
+	int i, j;
+	char source[100] = "\0";
+	int *Newstr = malloc(100 * sizeof(int));
 	
-	for ( i = 0; i < 100; i++)
+	gets(source);
+	*Newstr = 0;
+
+	j = change(source, Newstr);
+	
+	for ( i = 0; i < j; i++)
 	{
-		*(Newstr + i) = '\0';
+		printf("%d ", *(Newstr + i));
 	}
-
-	change(source, Newstr);
-	puts(Newstr);
-	free(Newstr);
-
+	printf("\n%d¸ö", j);
+	
 	return 0;
 }
 
-void change(char *source, char *Newstr)
+int change(char *source, int *Newstr)
 {
 	int i, j = 0;
+	int count,flag=0;
+
 	for ( i = 0; i < strlen(source); i++)
 	{
 		if (isdigit(*(source+i)))
 		{
-			*(Newstr + j++) = *(source + i);
+			*(Newstr + j++) = *(source + i)-48;
 		}
 	}
+	
+	return j;
 }

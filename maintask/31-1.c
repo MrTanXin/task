@@ -1,6 +1,6 @@
 #include <stdio.h>
-
 #define N 3
+
 void exchange_arr(int(*string)[N]);
 void print(int a[][N]);
 void exchange(int string[][N]);
@@ -31,7 +31,6 @@ void exchange_arr(int (*string)[N])
 			*(*(string + j) + i) = temp;
 		}
 	}
-
 	print(string);
 }
 
