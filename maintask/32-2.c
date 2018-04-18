@@ -1,42 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
-
-int change(char *source, int *Newstr);
+#include <stdio.h>#include<ctype.h>#include<string.h>
 
 int main()
 {
-	int i, j;
-	char source[100] = "\0";
-	int *Newstr = malloc(100 * sizeof(int));
-	
-	gets(source);
-	*Newstr = 0;
-
-	j = change(source, Newstr);
-	
-	for ( i = 0; i < j; i++)
-	{
-		printf("%d ", *(Newstr + i));
-	}
-	printf("\n%d¸ö", j);
-	
-	return 0;
-}
-
-int change(char *source, int *Newstr)
-{
-	int i, j = 0;
-	int count,flag=0;
-
-	for ( i = 0; i < strlen(source); i++)
-	{
-		if (isdigit(*(source+i)))
-		{
-			*(Newstr + j++) = *(source + i)-48;
-		}
-	}
-	
-	return j;
-}
+	char a[100];	int num[100], k, m;		printf("please input:");	gets(a);	k = count(a, num);	printf("There are %d numbers\n", k);		for (m = 0; m<k; m++)		printf("%d\t", num[m]);	printf("\n");		return 0;}int count(char *a, int *num){	int i, j = 0;		for (i = 0; i<strlen(a); i++)		if (isdigit(*(a + i)))		{			*(num + j) = 0;			while (isdigit(*(a + i)) && *(a + i) != '\0')			{				*(num + j) = *(num + j) * 10 + *(a + i) - '0';				i++;			}			j++;		}		return j;}
