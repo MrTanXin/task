@@ -25,13 +25,14 @@ int main()
 
 void Recursive_reverser(char *Oldstr, char *Newstr,int i)
 {
-	if (i==0)
+	i--;
+	if (i==-1)
 	{
 		return 0;
 	}
 	static int j = 0;
 	Newstr[j++] = Oldstr[i];
-	No_Recursive_reverser(Oldstr, Newstr,i++);
+	Recursive_reverser(Oldstr, Newstr,i);
 }
 
 void No_Recursive_reverser(char *Oldstr, char *Newstr)
