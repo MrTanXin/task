@@ -7,11 +7,13 @@ void No_Recursive_reverser(char *Oldstr, char *Newstr);
 
 int main()
 {
-	char *string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char *Newstr = malloc(27 * sizeof(char));
-	char *Newstr1 = malloc(27 * sizeof(char));
+	char string[27] = "\0";
+	char Newstr[27] = "\0";
+	char Newstr1[27] = "\0";
 	Newstr[26] = '\0';
 	Newstr1[26] = '\0';
+
+	gets(string);
 	
 	Recursive_reverser(string,Newstr, strlen(string));
 	puts(Newstr);
